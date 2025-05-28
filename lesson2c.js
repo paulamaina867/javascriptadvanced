@@ -33,3 +33,23 @@ console.log(email)
 
 //  Assignment: Create an object product with properties id name, cost, quantity
 //  and description. Use destructuring to extract and log them
+
+
+// Step 1: Create the product object
+const product = {
+  id: 101,
+  name: "Wireless Mouse",
+  cost: 25.99,
+  quantity: 50,
+  description: "A smooth and responsive wireless mouse."
+};
+
+// Step 2: Use destructuring to extract the properties
+const { id, name, cost, quantity, description } = product;
+
+// Step 3: Log the extracted values
+console.log("ID:", id);
+console.log("Name:", name);
+console.log("Cost:", cost);
+console.log("Quantity:", quantity);
+console.log("Description:", description);
