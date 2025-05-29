@@ -14,12 +14,15 @@ console.log("Doubled:", doubled);
 console.log("Greater than 5:", greaterThanFive);
 
 
-// Use .map() function/method to convert an array of prices to prices with 16% value added tax VAT and show the final cost.
+// Use .map() function/method to convert an array of prices to prices with 16% value added tax VAT and show the final cost. 
+
+//.map() is a method used to transform each item in an array and create a new array with the results.
 // Original prices (without VAT)
+
 const prices = [100, 200, 300, 400];
 
 // Use .map() to add 16% VAT
-const pricesWithVAT = prices.map(price => price * 1.16);
+const pricesWithVAT = prices.map(price => (price * 1.16).toFixed(2));
 
 // Show the final costs
 console.log("Prices with 16% VAT:", pricesWithVAT);
