@@ -45,5 +45,9 @@ console.log(typeof myvariable);
 
 //null represents the intentional absence of any object value
 
-let mynumber
+// Null - represents intentional absence of any object value
+let emptyValue = null;
+console.log(typeof emptyValue); // "object" (bug in JavaScript)
+
+// 0114974234
 

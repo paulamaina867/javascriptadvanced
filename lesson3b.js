@@ -1,21 +1,21 @@
-//compund  assignments
+// compound assignments
 let x = 5;
 
 x += 2;
+console.log("The new value of x is: " + x)
 
-console.log("the new value of x is:  " + x)
+x *= 3;
+console.log("The answer is: " + x)
 
 
+//increment and Decrement 
+let y = 1
 
-
-//increment en decrement
-let y=1
 y++;
+console.log(y)
+++y;
 console.log(y)
 
 //decrement
-let y=1
 y--;
-
-
-
+console.log(y)
