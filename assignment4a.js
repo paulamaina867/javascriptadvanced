@@ -25,4 +25,8 @@ function register(username, email, password, phone) {
 }
 
 
-register("Alice", "alice@example.com", "mypw123", "1234567890");
+register("Alice", "aliceexample.com", "mypw123", "1234567890");
+
+
+
+

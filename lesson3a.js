@@ -40,6 +40,18 @@ console.log(replacedname)
 
 //find out how to replace multiple ocurrences at once
 
+const fruits = ["apple", "banana", "apple", "orange", "banana"];
+
+const replacements = {
+  apple: "kiwi",
+  banana: "grape",
+  orange: "melon"
+};
+
+const replacedFruits = fruits.map(word => replacements[word] || word);
+
+console.log(replacedFruits); 
+
 //chartArt() this function normally finds /outputs the character in a given index
 console.log("letter in index five is: "+ name.trim().charAt(4))
 
