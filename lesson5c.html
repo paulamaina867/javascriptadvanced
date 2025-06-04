@@ -1,0 +1,35 @@
+<!-- DOM DOCUMENT OBJECT MODEL -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random dog viewer</title>
+</head>
+<body>
+    <h1>Random dog image</h1>
+    <button   onclick="getrandomdog()">show a dog</button>
+    <img src="" id="dogimage" alt="randon dog will apppear here">
+    <script>
+
+        async function getrandomdog() {
+            try{
+                const response= await fetch(
+                    "https://dog.ceo/api/breeds/image/random"
+
+                );
+                const data = await response.json();
+                // console.log(data);
+                // get the image by use of its id and set the new image given back as response from the api
+                const img  = document.getElementById('dogimage');
+
+                img.src = data.message
+            }  catch (error) {
+                //incase of error
+                console.error("error fetching the dog image:"+ error)
+            }
+        }
+    </script>
+</body>
+</html>
