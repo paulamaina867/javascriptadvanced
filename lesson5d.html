@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Hello word</h1>
+    <button onclick="changetitle()">change text</button>
+
+    <script>
+        const changetitle =()=>{
+            let element= document.getElementById("title")
+            element.innerText ="you clicked the button";
+
+        };
+
+        const changecontent =()=>{
+            document.getElementById("title").innerHTML="<span style='color:red'welcome<strong>back</strong> !</span>"
+            getElementcontent();
+        }
+
+        const getElementcontent  =()=>{
+            let h1  = document.getElementById("title")
+        }
+
+        
+    </script>
+</body>
+</html>
