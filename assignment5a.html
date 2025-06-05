@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Paragraph Text Changer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #myParagraph {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script>
+    function changeText() {
+      // Change the text of the paragraph
+      document.getElementById("myParagraph").innerHTML = 
+        "Thanks for clicking the button! The paragraph text has now been updated using JavaScript.";
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Welcome to the Paragraph Text Changer</h1>
+  <p id="myParagraph">
+    This is the original text of the paragraph. Click the button below to see it change!
+  </p>
+  <button onclick="changeText()">Change Paragraph Text</button>
+
+</body>
+</html>

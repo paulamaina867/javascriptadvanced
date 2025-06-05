@@ -1,30 +1,37 @@
-// Fetch and print a random joke
-async function fetchJoke() {
-  try {
-    const res = await fetch("https://official-joke-api.appspot.com/random_joke");
-    const joke = await res.json();
-    console.log("🃏 Random Joke:");
-    console.log("Setup:", joke.setup);
-    console.log("Punchline:", joke.punchline);
-  } catch (err) {
-    console.error("Failed to fetch joke:", err);
-  }
-}
+// async and await functions
+// these two keywords are used when the function you're using is expecting some data from outside the function
 
-// Fetch and print products
-async function fetchProducts() {
-  try {
-    const res = await fetch("https://sengi2025.pythonanywhere.com/api/getproducts");
-    const products = await res.json();
-    console.log("\n🛒 Product List:");
-    products.forEach(p => {
-      console.log(`Name: ${p.product_name} | Price: ${p.price}`);
-    });
-  } catch (err) {
-    console.error("Failed to fetch products:", err);
-  }
-}
+const fetchdata = async () => {
+    try {
+        // First: fetch a random joke
+        let jokeResponse = await fetch("https://official-joke-api.appspot.com/random_joke");
 
-// Run both functions
-fetchJoke();
-fetchProducts();
+        // Destructure the setup and punchline
+        let { setup, punchline } = await jokeResponse.json();
+
+        // Print the joke
+        console.log(" Joke Setup: " + setup);
+        console.log(" Punchline: " + punchline);
+
+        // Second: fetch the product list
+        let productResponse = await fetch("https://sengi2025.pythonanywhere.com/api/getproducts");
+
+        // Parse the response JSON
+        let products = await productResponse.json();
+
+        // Loop through and print product_name and price
+        console.log(" Product List:");
+        products.forEach(product => {
+            console.log("Product Name: " + product.product_name);
+            console.log("Price: " + product.price);
+            console.log("--------------------");
+        });
+
+    } catch (error) {
+        // Catch and print any error
+        console.error(" Error fetching the data: " + error);
+    }
+};
+
+// Call the function
+fetchdata();
