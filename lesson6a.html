@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+</head>
+<body>
+    <h1 id="maintitle"> Hover or clickme</h1>
+    <button onclick="handleclick()">click button</button>
+
+    <br> <br>
+    <input type="text" id="textinput"placeholder="type something" onkeydown="handlekeydown(event)">
+    <br> <br>
+
+    <select id="dropdown" onchange="handlechange()">
+        <option value="">select a fruit</option>
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="mango">Mango</option>
+
+        <br>
+        <p id="feedback"></p>
+
+        <br><br>
+        <form onsubmit="formsubmit(event)">
+            <input type="text" placeholder="enter your name">
+            <button type="submit"></button>
+        </form>
+    </select>
+
+
+
+
+
+
+
+
+
+    <script>
+        const maintitle = document.getElementById("maintitle")
+
+        const handClick = () =>{
+            alert("the button has been clicked")
+        };
+        //mouseclick event
+        maintitle.onclick =()=>{
+            maintitle.style.color="blue"
+            feedback.innertext="title has been clicked"
+            feedback.style.color
+        }
+    </script>
+</body>
+</html>

@@ -8,7 +8,11 @@
 <body>
     <h1 id="title">Hello word</h1>
     <button onclick="changetitle()">change text</button>
+    <button  onclick="changecontent()">change content</button>
+    <br> <br> <br>
 
+    <input type="text" id="myinput" value=""> <br>
+    <button ondblclick="getinputvalue()">Getvalue</button>
     <script>
         const changetitle =()=>{
             let element= document.getElementById("title")
@@ -23,6 +27,13 @@
 
         const getElementcontent  =()=>{
             let h1  = document.getElementById("title")
+            let content = h1.innerText
+            console.log("content:"+ content)
+        }
+
+        const  getinputvalue =()=>{
+            let input = document.getElementbyId("title")
+            let content=h1.innerText
         }
 
         

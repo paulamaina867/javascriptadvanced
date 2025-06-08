@@ -18,12 +18,12 @@ const fetchdata = async () => {
 
         // Parse the response JSON
         let products = await productResponse.json();
-
+        //  console.log(products)
         // Loop through and print product_name and price
         console.log(" Product List:");
         products.forEach(product => {
             console.log("Product Name: " + product.product_name);
-            console.log("Price: " + product.price);
+            console.log("Price: " + product.product_photo);
             console.log("--------------------");
         });
 
