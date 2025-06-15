@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create and Remove Elements</title>
+  </head>
+  <body>
+    <h1>My Dynamic List</h1>
+    <input type="text" id="itemInput" placeholder="Enter a new Item" />
+    <br />
+    <br />
+
+    <button onclick="addItem()">Add Item</button>
+    <br />
+    <br />
+
+    <ul id="itemList"></ul>
+
+    <script>
+      const itemInput = document.getElementById("itemInput");
+      const itemList = document.getElementById("itemList");
+
+      const addItem = () => {
+        const value = itemInput.value.trim();
+
+        if (value === "") return;
+
+        //create an li - list item element
+        const li = document.createElement("li");
+
+        //set the text extracted from the value
+        li.innerText = value;
+
+        //create a delete button
+        const delBtn = document.createElement("button");
+        delBtn.innerText = "Delete";
+        delBtn.style.marginLeft = "10px";
+        delBtn.style.color = "white";
+        delBtn.style.backgroundColor = "red";
+        delBtn.onclick = () => {
+          itemList.removeChild(li); // it removes the item from the list
+        };
+
+        //add the button to the list item
+        li.appendChild(delBtn);
+
+        // add the li to the ul
+        itemList.appendChild(li);
+
+        // clear the input tag
+        itemInput.value = "";
+      };
+    </script>
+  </body>
+</html>
+
+<!-- create an ordered list that is dynamic and add atleat 5 items -->
+<!-- Read and write notes on Javascript Object Oriented Programming - Encapusaltion/ Inheritance/ Abstraction and Polymorphism. Submit the same using this email address 
+ modcom.edu@gmail.com -->

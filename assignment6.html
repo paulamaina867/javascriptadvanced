@@ -1,0 +1,39 @@
+<!-- create an ordered list that is dynamic and add atleat 5 items -->
+<!-- Read and write notes on Javascript Object Oriented Programming - Encapusaltion/ Inheritance/ Abstraction and Polymorphism. Submit the same using this email address 
+ modcom.edu@gmail.com -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Ordered List</title>
+</head>
+<body>
+
+  <h2>📝 My Dynamic List</h2>
+  <ol id="dynamicList"></ol>
+
+  <script>
+    // Array of list items
+    const items = [
+      "Learn JavaScript basics",
+      "Understand Object-Oriented Programming",
+      "Practice DOM manipulation",
+      "Build a dynamic webpage",
+      "Review and submit project"
+    ];
+
+    // Reference to the <ol> element
+    const list = document.getElementById("dynamicList");
+
+    // Loop through items and add to the list
+    items.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      list.appendChild(li);
+    });
+  </script>
+
+</body>
+</html>

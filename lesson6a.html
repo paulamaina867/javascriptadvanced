@@ -6,48 +6,85 @@
     <title>Event Handling</title>
 </head>
 <body>
-    <h1 id="maintitle"> Hover or clickme</h1>
-    <button onclick="handleclick()">click button</button>
-
+    <h1 id="mainTitle"> Hover or click Me!</h1>
+    <button onclick="handlClick()">Click Button</button>
+    
     <br> <br>
-    <input type="text" id="textinput"placeholder="type something" onkeydown="handlekeydown(event)">
-    <br> <br>
+    <input type="text" id="textInput" placeholder="Type Something" onkeydown="handleKeyDown(event)">
+    <br><br>
 
-    <select id="dropdown" onchange="handlechange()">
-        <option value="">select a fruit</option>
-        <option value="apple">Apple</option>
-        <option value="banana">Banana</option>
-        <option value="mango">Mango</option>
-
-        <br>
-        <p id="feedback"></p>
-
-        <br><br>
-        <form onsubmit="formsubmit(event)">
-            <input type="text" placeholder="enter your name">
-            <button type="submit"></button>
-        </form>
+    <select  id="dropdown" onchange="handleChange()">
+        <option value="">Select A Fruit</option>
+        <option value="Apple">Apple</option>
+        <option value="Banana">Banana</option>
+        <option value="Mango">Mango</option>
     </select>
 
+    <br>
+    <p id="feedback"></p>
 
+    <h3 id="myheading"></h3>
 
+    <br><br>
+    <form onsubmit="formsubmit(event)">
+        <input type="text" placeholder="Enter your name">
+        <button type="submit">Subtmit</button>
+    </form>
 
-
+    <h3 id="formHeading"></h3>
 
 
 
 
     <script>
-        const maintitle = document.getElementById("maintitle")
+        const mainTitle = document.getElementById("mainTitle");
+        const feedback = document.getElementById("feedback");
 
-        const handClick = () =>{
-            alert("the button has been clicked")
+        const handlClick = () =>{
+            alert("The button has been clicked")
         };
-        //mouseclick event
-        maintitle.onclick =()=>{
-            maintitle.style.color="blue"
-            feedback.innertext="title has been clicked"
-            feedback.style.color
+
+        //mouse click event
+        mainTitle.onclick = () =>{
+            mainTitle.style.color = "blue"
+            feedback.innerText = "Title has been clicked"
+            feedback.style.color = "blue"
+        };
+
+        //on mouse over
+        mainTitle.onmouseover = () => {
+            mainTitle.style.color = "red";
+            feedback.innerText = "Mouse is over the h1 title";
+        };
+
+        //dictate What happens when you remove the mouse ontop of the tag element
+        mainTitle.onmouseout = function (){
+            mainTitle.style.color = "orange";
+            feedback.innerText = "Mouse has left the title";
+            feedback.style.color = "purple";
+        };
+
+        const myheading = document.getElementById("myheading");
+
+        // change event on dropdown Functionality
+        const handleChange= () =>{
+            let selectedValue = document.getElementById("dropdown").value;
+            myheading.innerText = `You have selected: ${selectedValue}`;
+            myheading.style.color = "blue";
+        };
+
+        // handling key down event
+        const handleKeyDown = () =>{
+            myheading.innerText = `You pressed: ${event.key}`
+        };
+
+
+        const formHeading = document.getElementById("formHeading");
+        //submitting the form
+        const formsubmit = (event) =>{
+            event.preventDefault();
+            formHeading.innerHTML= "<h2 style='color: green'> The form has been submitted </h2>"
+            alert("Form has been submitted")
         }
     </script>
 </body>

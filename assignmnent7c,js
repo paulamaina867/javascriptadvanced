@@ -1,0 +1,39 @@
+// Superclass
+class Fish {
+    constructor(type, habitat) {
+        this.type = type;
+        this.habitat = habitat;
+    }
+
+    swim() {
+        console.log(`${this.type} is swimming in the ${this.habitat}.`);
+    }
+
+    layEggs() {
+        console.log(`${this.type} lays eggs.`);
+    }
+
+    breatheUnderwater() {
+        console.log(`${this.type} breathes through gills underwater.`);
+    }
+}
+
+// Subclass
+class Tilapia extends Fish {
+    // Tilapia can also have its own methods
+    constructor(habitat) {
+        // Call the superclass constructor with type as "Tilapia"
+        super("Tilapia", habitat);
+    }
+
+    feed() {
+        console.log("Tilapia is feeding on algae.");
+    }
+}
+
+// Creating an object for Tilapia
+let myTilapia = new Tilapia("freshwater");
+
+myTilapia.swim();             // Inherited from Fish
+myTilapia.breatheUnderwater(); // Inherited from Fish
+myTilapia.feed();             // Own method
